@@ -35,9 +35,15 @@ const pinch_directory = (app_name) => {
 }
 
 const pinch_files = (app_name) =>{
-    const routes_file = `./src/${app_name}/Routes/${app_name}.js`
+    const routes_file = `./src/${app_name}/Routes/${app_name}Route.js`
+    const model_file = `./src/${app_name}/Models/${app_name}Model.js`
+    const service_file = `./src/${app_name}/Services/${app_name}Service.js`
+    const controller_file = `./src/${app_name}/Controllers/${app_name}Controller.js`
     const routes_file_content = 'import {} from '
     createFile(routes_file, routes_file_content)
+    createFile(model_file, routes_file_content)
+    createFile(service_file, routes_file_content)
+    createFile(controller_file, routes_file_content)
 }
 
 
