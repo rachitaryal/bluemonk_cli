@@ -1,3 +1,3 @@
-# Test App
+# Blue Monk Automate App
 
-this is just a test app
+monk.js file to automate directory and files creation for blue monk
