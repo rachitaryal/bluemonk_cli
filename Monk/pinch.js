@@ -20,6 +20,12 @@ const createFile = (fileName, fileContent) =>{
     })
 }
 
+const copyFile = (source_file, destination_file) =>{
+    fs.copyFile(source_file, destination_file, (err) => {
+    if (err) throw err;
+    });
+}
+
 class Pinch{
 
     constructor(name){
@@ -66,16 +72,22 @@ class Pinch{
 
         const common_file_content = '//import {} '
         const routes_file = `${dot_path}${app_name}/Routes/${app_name}Routes.js`
-        const routes_file_content = `import run from "../Dispatcher/dispatch"\nimport Router from "express/router"`
+        // const routes_file_content = `import run from "../Dispatcher/dispatch"\nimport Router from "express/router"`
+        
+        const router_src_file = `./Monk/src/App/Routes/AppRoutes.js`
+        const router_des_file = routes_file
 
         //namespace files
         createFile(routes_namespace, common_file_content)
         createFile(model_namespace, common_file_content)
         createFile(service_namespace, common_file_content)
         createFile(controller_namespace, common_file_content)
-        createFile(routes_file, routes_file_content)
+        createFile(routes_file, common_file_content)
+        copyFile(router_src_file, router_des_file)
     }
         
 }
 
-module.exports.default = Pinch
+module.exports = {
+    Pinch
+}

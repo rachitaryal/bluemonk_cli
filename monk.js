@@ -1,13 +1,7 @@
 const fs = require('fs')
-const Pinch = require('./Monk/pinch')
+const {Pinch} = require('./Monk/pinch')
+const {console_logger} = require('./Monk/console_logger')
 
-
-const console_logger = (command_string) =>{
-    const blue_color = `\x1b[34m%s\x1b[0m`
-    console.log("========================================\n")
-    console.log(blue_color,`${command_string}\n`)
-    console.log("========================================")
-}
 
 const arguments = process.argv 
 if(!arguments[3]){
