@@ -1,67 +1,66 @@
 const fs = require('fs')
+const Pinch = require('./Monk/pinch')
 
-const createDir = (dirPath) => {
-    fs.mkdirSync(process.cwd() + dirPath, {recursive: true }, (error)=> {
-        if(error){
-            console.log('Error: ', error)
-        } else {
-            // console.log('Directory Created!')
-        }
-    })
+
+const console_logger = (command_string) =>{
+    const blue_color = `\x1b[34m%s\x1b[0m`
+    console.log("========================================\n")
+    console.log(blue_color,`${command_string}\n`)
+    console.log("========================================")
 }
-
-const createFile = (fileName, fileContent) =>{
-    fs.writeFile(fileName, fileContent, (error)=>{
-        if(error){
-            console.log('Error: ', error)
-        } else {
-            // console.log('Directory Created!')
-        }
-    })
-}
-
-const pinch_directory = (app_name) => {
-    const createApp = `/src/${app_name}`
-    const createControllers = `${createApp}/Controllers`
-    const createRoutes = `${createApp}/Routes`
-    const createModels = `${createApp}/Models`
-    const createServices = `${createApp}/Services`
-
-    createDir(createApp)
-    createDir(createControllers)
-    createDir(createRoutes)
-    createDir(createModels)
-    createDir(createServices)
-}
-
-const pinch_files = (app_name) =>{
-    const routes_file = `./src/${app_name}/Routes/${app_name}Route.js`
-    const model_file = `./src/${app_name}/Models/${app_name}Model.js`
-    const service_file = `./src/${app_name}/Services/${app_name}Service.js`
-    const controller_file = `./src/${app_name}/Controllers/${app_name}Controller.js`
-    const routes_file_content = 'import {} from '
-    createFile(routes_file, routes_file_content)
-    createFile(model_file, routes_file_content)
-    createFile(service_file, routes_file_content)
-    createFile(controller_file, routes_file_content)
-}
-
 
 const arguments = process.argv 
-const args_create_app_command = arguments[2].toString()
-const args_app_name = arguments[3].toString()
-
-const args_first_character = args_app_name.charAt(0).toUpperCase()
-const remaining_characters = args_app_name.slice(1, args_app_name.length)
-const combined_app_name = args_first_character + remaining_characters
-
-
-if(args_create_app_command === 'createapp' || 'create_app'){
-    pinch_directory(combined_app_name)
-    console.log(`${combined_app_name} app created`) ; 
-    pinch_files(combined_app_name)
-    // createFile(`./${combined_app_name}/test.js`, 'something')
-}else{
-    console.log(` Hint: node pincher.js createapp <app_name>`)
+if(!arguments[3]){
+    console_logger('Incomplete Command')
+    return
 }
-  
+const command = arguments[2].toString()
+const name = arguments[3].toString()
+
+const getName = () => {
+    const name_first_character = name.charAt(0).toUpperCase()
+    const name_remaining_characters = name.slice(1, name.length)
+    const final_name = name_first_character + name_remaining_characters
+    return final_name
+}
+
+
+const valid_commands = ["startproject", "start_project", "createapp", "create_app"]
+if(!valid_commands.includes(command)){
+    console_logger('Invalid Command')
+}
+const startproject_commands = ["startproject", "start_project"]
+if(startproject_commands.includes(command)){
+    const src_dir = `./src/`
+    if(fs.existsSync(src_dir)){
+        console_logger("Project has already been initiated")
+        return
+    }
+    const project_name = getName()
+    const pinch = new Pinch(project_name)
+    pinch.source()
+    console_logger("Project created")
+}
+
+const createapp_command = ["createapp", "create_app"]
+if(createapp_command.includes(command)){
+    const src_dir = './src/'
+
+    if(!fs.existsSync(src_dir)){
+        console_logger(`Project has not been created yet.\nRun: "node monk.js startproject <project_name>"`)
+        return
+    }
+
+    const app_name = getName()
+    const app_dir = `src/${app_name}`
+    if(fs.existsSync(app_dir)){
+        console_logger(`${app_name} app already exists...`)
+        return
+    }
+    const pinch = new Pinch(app_name)
+    pinch.app_directory()
+    pinch.app_files()
+    console_logger(`${app_name} app created`)
+
+}
+
