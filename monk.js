@@ -18,16 +18,17 @@ const getName = () => {
     return final_name
 }
 
+const startproject_commands = ["startproject", "start_project", "project"]
+const createapp_commands = ["createapp", "create_app", "app"]
 
-const valid_commands = ["startproject", "start_project", "createapp", "create_app"]
+const valid_commands = [...startproject_commands, ...createapp_commands]
 if(!valid_commands.includes(command)){
     console_logger('Invalid Command')
 }
-const startproject_commands = ["startproject", "start_project"]
 if(startproject_commands.includes(command)){
     const src_dir = `./src/`
     if(fs.existsSync(src_dir)){
-        console_logger("Project has already been initiated")
+        console_logger(`Project has already been initiated\n\tRun: "node monk.js createapp <app_name>"`)
         return
     }
     const project_name = getName()
@@ -36,19 +37,18 @@ if(startproject_commands.includes(command)){
     console_logger("Project created")
 }
 
-const createapp_command = ["createapp", "create_app"]
-if(createapp_command.includes(command)){
+if(createapp_commands.includes(command)){
     const src_dir = './src/'
 
     if(!fs.existsSync(src_dir)){
-        console_logger(`Project has not been created yet.\nRun: "node monk.js startproject <project_name>"`)
+        console_logger(`Project has not been created yet.\n\tRun: "node monk.js startproject <project_name>"`)
         return
     }
 
     const app_name = getName()
     const app_dir = `src/${app_name}`
     if(fs.existsSync(app_dir)){
-        console_logger(`${app_name} app already exists...`)
+        console_logger(`App "${app_name}" already exists...`)
         return
     }
     const pinch = new Pinch(app_name)
