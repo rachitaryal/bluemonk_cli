@@ -46,15 +46,19 @@ class Pinch{
     
         const server_file = `.${root}/Server.js`
         const routes_file = `.${root}/Routes.js`
+        const setup_file = `.${root}/Setup.js`
 
         const monk_server_file = `${monk_root}/Server.js`
         const monk_routes_file = `${monk_root}/Routes.js`
+        const monk_setup_file = `${monk_root}/Setup.js`
     
         createDir(root)
         createFile(server_file)
         createFile(routes_file)
+        createFile(setup_file)
         copyFile(monk_server_file, server_file)
         copyFile(monk_routes_file, routes_file)
+        copyFile(monk_setup_file, setup_file)
     }
 
     app_directory(){
@@ -114,6 +118,17 @@ class Pinch{
         
 }
 
+class ServeMonk{
+    serve(){
+        const monk_dir = `./Monk/`
+        const package_json_file = './package.json'
+        const monk_package_json_file = `${monk_dir}/package.json`
+
+        copyFile(monk_package_json_file, package_json_file)
+    }
+}
+
 module.exports = {
-    Pinch
+    Pinch,
+    ServeMonk
 }

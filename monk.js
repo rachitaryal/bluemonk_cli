@@ -1,6 +1,8 @@
 const fs = require('fs')
-const {Pinch} = require('./Monk/pinch')
-const {console_logger} = require('./Monk/console_logger')
+const monk_dir = './Monk/'
+const monk_utilities = `${monk_dir}@_utilities`
+const {Pinch, console_logger} = require(monk_utilities)
+
 
 
 const arguments = process.argv 
@@ -10,6 +12,12 @@ if(!arguments[3]){
 }
 const command = arguments[2].toString()
 const name = arguments[3].toString()
+
+const package_json = `./package.json`
+if(!fs.existsSync(package_json)){
+    console_logger(`Monk has not been served\n\tRun: "node serve.js monk"`)
+    return
+}
 
 const getName = () => {
     const name_first_character = name.charAt(0).toUpperCase()
@@ -25,6 +33,9 @@ const valid_commands = [...startproject_commands, ...createapp_commands]
 if(!valid_commands.includes(command)){
     console_logger('Invalid Command')
 }
+
+
+
 if(startproject_commands.includes(command)){
     const src_dir = `./src/`
     if(fs.existsSync(src_dir)){
@@ -38,8 +49,8 @@ if(startproject_commands.includes(command)){
 }
 
 if(createapp_commands.includes(command)){
-    const src_dir = './src/'
 
+    const src_dir = './src/'
     if(!fs.existsSync(src_dir)){
         console_logger(`Project has not been created yet.\n\tRun: "node monk.js startproject <project_name>"`)
         return
