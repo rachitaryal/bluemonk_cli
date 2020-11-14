@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+const server = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -11,11 +11,11 @@ const {console_logger} = require(`${monk_dir}@_utilities`)
 dotenv.config();
 
 //Routes Middlewares
-app.use(cors());
-app.use(bodyParser.json());
+server.use(cors());
+server.use(bodyParser.json());
 
 //Main Router
-app.use("/", router);
+server.use("/", router);
 
 //Connect to DB
 mongoose.connect(
@@ -26,5 +26,5 @@ mongoose.connect(
 
 //Start listening to server
 const PORT = 5000;
-const URL_MAIN = `http://localhost:/${PORT}`
-app.listen(PORT, () => console_logger(`Server is running on ${URL_MAIN}`));
+const URL_MAIN = `http://localhost:${PORT}`
+server.listen(PORT, () => console_logger(`Server is running on ${URL_MAIN}`));
