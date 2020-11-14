@@ -3,5 +3,6 @@ steps:
 - run "node serve.js monk"
 - run "node monk.js project <project_name>"
 - change start script in package.json from <Root> to <project_name> & save
+- run "npm install"
 - run "node monk.js app <app_name>
 - rum "npm run start"
