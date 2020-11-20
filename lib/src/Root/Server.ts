@@ -1,14 +1,15 @@
-const express = require("express");
-const server = express();
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const router = require("./Routes");
+import express from 'express'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import router from './Routes'
+import {console_logger} from 'monk/lib/@utilities'
+//create server
+const server = express()
 
-const monk_dir = '../../Monk/'
-const {console_logger} = require(`${monk_dir}@_utilities`)
-dotenv.config();
+//config dotenv
+dotenv.config()
 
 //Routes Middlewares
 server.use(cors());
@@ -19,7 +20,7 @@ server.use("/", router);
 
 //Connect to DB
 mongoose.connect(
-  process.env.DB_CONNECT,
+  process.env.DB_CONNECT || '',
   { useUnifiedTopology: true, useNewUrlParser: true },
   () => console_logger("Connected to Mongo Atlas")
 );
