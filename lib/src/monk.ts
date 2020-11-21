@@ -1,4 +1,4 @@
-import {monk_func} from 'bluemonk/@_utilities'
+import {monk_func} from 'bluemonk'
 const args: string[] = process.argv
 monk_func(args)
 

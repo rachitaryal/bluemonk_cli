@@ -2,7 +2,7 @@
     "name": "<project_name>",
     "version": "1.0.0",
     "description": "Built with BlueMonk",
-    "main": "Server.ts",
+    "main": "index.ts",
     "scripts": {
         "dev" : "nodemon './src/<project_name>/Server.ts'",
         "build": "tsc -p ."
