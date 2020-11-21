@@ -9,12 +9,12 @@ Command Line Interface for [Blue Monk](https://github.com/rachitaryal/BlueMonk)
 
 ### Installation
 
-Requires [Node.js](https://nodejs.org/) v4+ to run.
+Requires [Node.js](https://nodejs.org/) v12+ to run.
 
-Clone [monk-cli](https://github.com/rachitaryal/blue_monk_cli)
+Clone [bluemonk-cli](https://github.com/rachitaryal/blue_monk_cli)
 
 ```sh
-$ npm i -g monk-cli
+$ npm i -g bluemonk-cli
 
 #to start the project
 $ monk project <project_name>
@@ -24,6 +24,14 @@ $ npm install
 
 #to create app
 $ monk app <app_name>
+
+```
+
+- replace "<project_name>" in package.json file with the project name
+
+```sh
+# start the server
+$ npm run dev
 
 ```
 
