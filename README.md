@@ -29,4 +29,4 @@ $ monk app <app_name>
 
 - [Blue Monk](https://github.com/rachitaryal/BlueMonk) - Node framework to build web apis.
 
-![](images/logo/monk-cli.gif)
+![](images/logo/bluemonkwallpaper_blue.gif)
