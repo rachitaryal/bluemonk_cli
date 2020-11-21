@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import router from './Routes'
-import {console_logger} from 'monk/lib/@utilities'
+import {console_logger} from 'bluemonk/lib/@utilities'
 //create server
 const server = express()
 

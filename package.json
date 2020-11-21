@@ -1,15 +1,13 @@
 {
-  "name": "monk-cli",
+  "name": "bluemonk-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Command Line Interface for BlueMonk(Web Framework)",
   "main": "main.js",
   "bin": {
     "monk": "./bin/main.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "scripts": {},
+  "keywords": ["bluemonk", "monk", "monk-cli", "cli", "framework", "express"],
+  "author": "Rachit Aryal",
   "license": "ISC"
 }

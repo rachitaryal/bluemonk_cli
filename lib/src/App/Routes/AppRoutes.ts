@@ -1,5 +1,5 @@
 import express from 'express'
-import {run} from 'monk/lib/@dispatcher'
+import {run} from 'bluemonk/lib/@dispatcher'
 // import AppListController from '../Controllers/AppListController'
 
 const app_router = express.Router()
