@@ -3,9 +3,6 @@
 Command Line Interface for [Blue Monk](https://github.com/rachitaryal/BlueMonk)
 
 > Helps build BlueMonk project in few and easy steps.
-> The simple and easy to use commands of
-> the interface will help you automate
-> the project quickly.
 
 ### Installation
 
@@ -31,7 +28,13 @@ $ monk app <app_name>
 
 ```sh
 # start the server
-$ npm run dev
+$ npm start
+
+```
+
+```sh
+# to utilize the inbuilt Users module
+$ monk add users
 
 ```
 
