@@ -1,6 +1,6 @@
 {
   "name": "bluemonk-cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Command Line Interface for BlueMonk(Web Framework)",
   "main": "main.js",
   "bin": {

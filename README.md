@@ -11,7 +11,7 @@
 
 Requires [Node.js](https://nodejs.org/) v12+ to run.
 
-Clone [bluemonk-cli](https://github.com/rachitaryal/blue_monk_cli)
+- GitHub: [Bluemonk-CLI](https://github.com/rachitaryal/blue_monk_cli)
 
 ```sh
 $ npm i -g bluemonk-cli
