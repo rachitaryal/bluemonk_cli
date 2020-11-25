@@ -2,7 +2,8 @@
 
 ![](images/logo/bluemonk_wallpaper_cli.png)
 
-Command Line Interface for [Blue Monk](https://github.com/rachitaryal/BlueMonk)
+Command Line Interface for [Blue Monk](https://www.npmjs.com/package/bluemonk)
+GitHub : [Blue Monk](https://github.com/rachitaryal/BlueMonk)
 
 > Helps build BlueMonk project in few and easy steps.
 
