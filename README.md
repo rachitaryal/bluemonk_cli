@@ -1,6 +1,6 @@
 # Blue Monk CLI
 
-![](images/logo/bluemonkwallpaper_cli.png)
+![](images/logo/bluemonk_wallpaper_cli.png)
 
 Command Line Interface for [Blue Monk](https://github.com/rachitaryal/BlueMonk)
 
