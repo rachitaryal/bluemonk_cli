@@ -1,6 +1,6 @@
 {
   "name": "bluemonk-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Command Line Interface for BlueMonk(Web Framework)",
   "main": "main.js",
   "bin": {
@@ -9,5 +9,5 @@
   "scripts": {},
   "keywords": ["bluemonk", "monk", "monk-cli", "cli", "framework", "express", "api"],
   "author": "Rachit Aryal",
-  "license": "ISC"
+  "license": "MIT"
 }
