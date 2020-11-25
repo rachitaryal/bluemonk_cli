@@ -1,6 +1,6 @@
 # Blue Monk CLI
 
-![](https://github.com/rachitaryal/bluemonk_cli/blob/master/images/logo/bluemonk_wallpaper_cli.png)
+![](https://raw.githubusercontent.com/rachitaryal/bluemonk_cli/master/images/logo/bluemonkwallpaper_white.gif)
 
 - Command Line Interface for [Blue Monk](https://www.npmjs.com/package/bluemonk)
 - GitHub : [Blue Monk](https://github.com/rachitaryal/BlueMonk)
