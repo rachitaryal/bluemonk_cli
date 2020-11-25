@@ -1,5 +1,7 @@
 # Blue Monk CLI
 
+![](images/logo/bluemonkwallpaper_cli.png)
+
 Command Line Interface for [Blue Monk](https://github.com/rachitaryal/BlueMonk)
 
 > Helps build BlueMonk project in few and easy steps.
@@ -39,5 +41,3 @@ $ monk add users
 ```
 
 - [Blue Monk](https://github.com/rachitaryal/BlueMonk) - Node framework to build web apis.
-
-![](images/logo/bluemonkwallpaper_blue.gif)

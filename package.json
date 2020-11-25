@@ -7,7 +7,7 @@
     "monk": "./bin/main.js"
   },
   "scripts": {},
-  "keywords": ["bluemonk", "monk", "monk-cli", "cli", "framework", "express"],
+  "keywords": ["bluemonk", "monk", "monk-cli", "cli", "framework", "express", "api"],
   "author": "Rachit Aryal",
   "license": "ISC"
 }
