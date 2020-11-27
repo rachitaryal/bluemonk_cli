@@ -11,7 +11,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "bluemonk": "^1.0.4",
+      "bluemonk": "^1.0.9",
       "express": "^4.17.1"
     },
     "devDependencies": {
